@@ -1,0 +1,230 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>example</groupId>
+	<artifactId>WebdriverManagerTest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.version>1.8</compiler.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<selenium.version>3.3.1</selenium.version>
+		<aspectj.version>1.8.10</aspectj.version>
+		<slf4j.version>1.7.24</slf4j.version>
+	</properties>
+
+	<!-- All the Dependencies Added Here -->
+	<dependencies>
+
+		<!-- Webdriver Manager Dependency -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>1.6.2</version>
+			<!-- <scope>test</scope> -->
+		</dependency>
+
+		<!-- TestNG Dependency -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.11</version>
+		</dependency>
+
+		<!-- Selenium Webdriver Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<!-- Selenium Webdriver-Firefox Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<!-- Selenium Webdriver-Chrome Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<!-- Selenium Webdriver-Edge Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-edge-driver</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<!-- Selenium Webdriver-Opera Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-opera-driver</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<!-- Selenium Webdriver-Internet Explorer Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-ie-driver</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
+		<!-- HTML Unit Headerless Browser Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>htmlunit-driver</artifactId>
+			<version>2.23.1</version>
+		</dependency>
+
+		<!-- Ghost/Phantom Webdriver Headerless Browser Dependency -->
+		<dependency>
+			<groupId>com.github.detro.ghostdriver</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+
+		<!-- Selenium Support Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+
+		<!-- ASPECTJ Tools Dependancy -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+
+
+		<!-- ASPECTJ Run Time Dependancy -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<build>
+				<plugins>
+					<!-- This plugin signs all of the project's attached artifacts with 
+						GnuPG -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+					</plugin>
+
+					<!-- This Plugin is used to compile the sources of your project -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.6.1</version>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+						</configuration>
+					</plugin>
+
+					<!-- This Plugin handles the copying of project resources to the output 
+						directory -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>3.0.2</version>
+					</plugin>
+
+					<!-- This Plugin creates a jar archive of the source files of the current 
+						project -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+					</plugin>
+
+					<!-- The Javadoc Plugin uses the Javadoc tool to generate javadocs for 
+						the specified project -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.10.4</version>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<!-- Apache Maven SureFire Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar</argLine>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+</project>
