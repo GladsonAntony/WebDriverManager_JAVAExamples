@@ -147,6 +147,14 @@
 			<version>${slf4j.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Automation Remarks Video Recorder TestNG Dependency -->
+		<dependency>
+			<groupId>com.automation-remarks</groupId>
+			<artifactId>video-recorder-testng</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>
