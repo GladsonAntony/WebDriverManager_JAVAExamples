@@ -43,14 +43,9 @@ public class test1
 		VideoRecorder.conf()         // Default is ${user.dir}/video.
 		.videoEnabled(true)                       	// Disabled video globally
 		.withVideoSaveMode(VideoSaveMode.ALL)     	// Save videos for passed and failed tests
-		.withRecorderType(RecorderType.FFMPEG)    // Monte is Default recorder
-		.withRecordMode(RecordingMode.ALL)  ;		// Record video only for tests with @Video
-		//.withScreenSize(1024,768);					// Set screen size
-/*		
-		MonteRecorder.conf()
-		.withVideoFolder("C:\\Gladson\\EclipseWorkspace\\WebAutomation_AllureParallel\\video")
-		.withRecordMode(RecordingMode.ALL)
-        .withRecorderType(RecorderType.MONTE);*/
+		.withRecorderType(RecorderType.MONTE)    // Monte is Default recorder
+		.withRecordMode(RecordingMode.ALL);		// Record video only for tests with @Video
+
 	}
 
 
