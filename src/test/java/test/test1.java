@@ -6,6 +6,7 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -31,6 +32,8 @@ import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import io.github.bonigarcia.wdm.PhantomJsDriverManager;
 
+import java.util.concurrent.TimeUnit;
+
 @Listeners(VideoListener.class)
 public class test1 
 {
@@ -40,11 +43,11 @@ public class test1
 	public void beforeClass() throws Exception
 	{
 	
-		VideoRecorder.conf()         // Default is ${user.dir}/video.
+		VideoRecorder.conf()                        // Default is ${user.dir}/video.
 		.videoEnabled(true)                       	// Disabled video globally
 		.withVideoSaveMode(VideoSaveMode.ALL)     	// Save videos for passed and failed tests
-		.withRecorderType(RecorderType.MONTE)    // Monte is Default recorder
-		.withRecordMode(RecordingMode.ALL);		// Record video only for tests with @Video
+		.withRecorderType(RecorderType.MONTE)       // Monte is Default recorder
+		.withRecordMode(RecordingMode.ALL);		    // Record video only for tests with @Video
 
 	}
 
@@ -56,7 +59,6 @@ public class test1
 		driver = new ChromeDriver();
 		driver.get("https://www.google.co.in/");
 		Assert.assertEquals(driver.getTitle(), "Boogle");
-		//driver.close();
 	}
 
 	@Test @Video
@@ -67,7 +69,6 @@ public class test1
 		driver.manage().window().maximize();
 		driver.get("https://www.google.co.in/");
 		Assert.assertEquals(driver.getTitle(), "Google");
-		//driver.close();
 	}
 
 	@Test
@@ -82,7 +83,6 @@ public class test1
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
 		Assert.assertEquals(driver.getTitle(), "Google");
-		//driver.close();
 	}
 
 	@Test @Video()
@@ -95,8 +95,23 @@ public class test1
 		driver.manage().window().maximize();
 		driver.get("https://www.google.co.in/");
 		Assert.assertEquals(driver.getTitle(), "Google");
-		//driver.close();
 	}
+
+    @Test @Video(name="Opera Test")
+    public void test_Opera() throws Exception
+    {
+        ChromeDriverManager.getInstance().setup();
+        DesiredCapabilities capabilities;
+        capabilities = DesiredCapabilities.opera();
+        ChromeOptions optionsOpera = new ChromeOptions();
+        optionsOpera.setBinary("C:/Program Files/Opera/launcher.exe");
+        capabilities.setCapability(ChromeOptions.CAPABILITY, optionsOpera);
+        driver = new ChromeDriver(capabilities);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://www.google.co.in/");
+        Assert.assertEquals(driver.getTitle(), "Google");
+    }
 	
 	
 	@AfterMethod
