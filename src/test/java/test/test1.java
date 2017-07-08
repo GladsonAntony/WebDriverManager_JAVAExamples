@@ -4,6 +4,16 @@
  */
 package test;
 
+import com.automation.remarks.testng.VideoListener;
+import com.automation.remarks.video.annotations.Video;
+import com.automation.remarks.video.enums.RecorderType;
+import com.automation.remarks.video.enums.RecordingMode;
+import com.automation.remarks.video.enums.VideoSaveMode;
+import com.automation.remarks.video.recorder.VideoRecorder;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
+import io.github.bonigarcia.wdm.PhantomJsDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,19 +29,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.automation.remarks.testng.VideoListener;
-import com.automation.remarks.video.annotations.Video;
-import com.automation.remarks.video.enums.RecorderType;
-import com.automation.remarks.video.enums.RecordingMode;
-import com.automation.remarks.video.enums.VideoSaveMode;
-import com.automation.remarks.video.recorder.VideoRecorder;
-import com.automation.remarks.video.recorder.monte.MonteRecorder;
-
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
-import io.github.bonigarcia.wdm.PhantomJsDriverManager;
-
 import java.util.concurrent.TimeUnit;
 
 @Listeners(VideoListener.class)
@@ -42,13 +39,11 @@ public class test1
 	@BeforeMethod
 	public void beforeClass() throws Exception
 	{
-	
-		VideoRecorder.conf()                        // Default is ${user.dir}/video.
-		.videoEnabled(true)                       	// Disabled video globally
-		.withVideoSaveMode(VideoSaveMode.ALL)     	// Save videos for passed and failed tests
-		.withRecorderType(RecorderType.MONTE)       // Monte is Default recorder
-		.withRecordMode(RecordingMode.ALL);		    // Record video only for tests with @Video
-
+		VideoRecorder.conf()                        								// Default is ${user.dir}/video.
+		.videoEnabled(true)                       									// Disabled video globally
+		.withVideoSaveMode(VideoSaveMode.ALL)     				// Save videos for passed and failed tests
+		.withRecorderType(RecorderType.MONTE)      		   	// Monte is Default recorder
+		.withRecordMode(RecordingMode.ALL);		    			// Record video only for tests with @Video
 	}
 
 

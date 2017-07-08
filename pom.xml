@@ -10,7 +10,7 @@
 		<compiler.version>1.8</compiler.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<selenium.version>3.3.1</selenium.version>
+		<selenium.version>3.4.0</selenium.version>
 		<aspectj.version>1.8.10</aspectj.version>
 		<slf4j.version>1.7.24</slf4j.version>
 	</properties>
@@ -40,14 +40,12 @@
 			<version>${selenium.version}</version>
 		</dependency>
 
-
 		<!-- Selenium Webdriver-Firefox Dependency -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
-
 
 		<!-- Selenium Webdriver-Chrome Dependency -->
 		<dependency>
@@ -56,7 +54,6 @@
 			<version>${selenium.version}</version>
 		</dependency>
 
-
 		<!-- Selenium Webdriver-Edge Dependency -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -64,14 +61,12 @@
 			<version>${selenium.version}</version>
 		</dependency>
 
-
 		<!-- Selenium Webdriver-Opera Dependency -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-opera-driver</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
-
 
 		<!-- Selenium Webdriver-Internet Explorer Dependency -->
 		<dependency>
@@ -94,15 +89,12 @@
 			<version>1.1.0</version>
 		</dependency>
 
-
 		<!-- Selenium Support Dependency -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-support</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
-
-
 
 		<!-- ASPECTJ Tools Dependancy -->
 		<dependency>
@@ -111,14 +103,12 @@
 			<version>${aspectj.version}</version>
 		</dependency>
 
-
 		<!-- ASPECTJ Run Time Dependancy -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -155,6 +145,29 @@
 			<version>1.4</version>
 		</dependency>
 
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.10.4</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -230,9 +243,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
 		</plugins>
 	</build>
-
-
 </project>
