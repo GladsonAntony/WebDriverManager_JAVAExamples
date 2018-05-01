@@ -1,8 +1,8 @@
 /**
  * @Author Gladson Antony
- * @Date Apr 18, 2017
+ * @Date May 01, 2018
  */
-package test;
+package examples;
 
 import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
@@ -10,15 +10,15 @@ import com.automation.remarks.video.enums.RecorderType;
 import com.automation.remarks.video.enums.RecordingMode;
 import com.automation.remarks.video.enums.VideoSaveMode;
 import com.automation.remarks.video.recorder.VideoRecorder;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
-import io.github.bonigarcia.wdm.PhantomJsDriverManager;
+import io.github.bonigarcia.wdm.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,7 +32,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 @Listeners(VideoListener.class)
-public class test1 
+public class WebDriverExamples
 {
 	public static WebDriver driver;
 
@@ -56,11 +56,34 @@ public class test1
 		Assert.assertEquals(driver.getTitle(), "Boogle");
 	}
 
+	@Test
+	public void test_ChromeHeadless() throws Exception
+	{
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--headless");
+		ChromeDriverManager.getInstance().setup();
+		driver = new ChromeDriver(chromeOptions);
+		driver.get("https://www.google.co.in/");
+		Assert.assertEquals(driver.getTitle(), "Boogle");
+	}
+
 	@Test @Video
 	public void test_Firefox() throws Exception
 	{
 		FirefoxDriverManager.getInstance().setup();
 		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.google.co.in/");
+		Assert.assertEquals(driver.getTitle(), "Google");
+	}
+
+	@Test
+	public void test_FirefoxHeadless() throws Exception
+	{
+		FirefoxOptions firefoxOptions = new FirefoxOptions();
+		firefoxOptions.addArguments("--headless");
+		FirefoxDriverManager.getInstance().setup();
+		driver = new FirefoxDriver(firefoxOptions);
 		driver.manage().window().maximize();
 		driver.get("https://www.google.co.in/");
 		Assert.assertEquals(driver.getTitle(), "Google");
@@ -95,13 +118,10 @@ public class test1
     @Test @Video(name="Opera Test")
     public void test_Opera() throws Exception
     {
-        ChromeDriverManager.getInstance().setup();
-        DesiredCapabilities capabilities;
-        capabilities = DesiredCapabilities.opera();
-        ChromeOptions optionsOpera = new ChromeOptions();
-        optionsOpera.setBinary("C:/Program Files/Opera/launcher.exe");
-        capabilities.setCapability(ChromeOptions.CAPABILITY, optionsOpera);
-        driver = new ChromeDriver(capabilities);
+		OperaDriverManager.getInstance().version("2.33").setup();
+		OperaOptions operaOptions = new OperaOptions();
+		operaOptions.setBinary("C:\\Program Files\\Opera\\52.0.2871.64\\opera.exe");
+		driver = new OperaDriver(operaOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.co.in/");

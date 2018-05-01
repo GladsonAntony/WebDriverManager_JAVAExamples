@@ -10,9 +10,11 @@
 		<compiler.version>1.8</compiler.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<selenium.version>3.4.0</selenium.version>
+		<selenium.version>3.11.0</selenium.version>
 		<aspectj.version>1.8.10</aspectj.version>
 		<slf4j.version>1.7.24</slf4j.version>
+		<testng.version>6.14.3</testng.version>
+		<webdrivermanager.version>2.2.1</webdrivermanager.version>
 	</properties>
 
 	<!-- All the Dependencies Added Here -->
@@ -22,7 +24,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>1.6.2</version>
+			<version>${webdrivermanager.version}</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
 
@@ -30,7 +32,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.11</version>
+			<version>${testng.version}</version>
 		</dependency>
 
 		<!-- Selenium Webdriver Dependency -->
@@ -200,6 +202,13 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-resources-plugin</artifactId>
 						<version>3.0.2</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-resources-plugin</artifactId>
+								<version>3.0.2</version>
+							</dependency>
+						</dependencies>
 					</plugin>
 
 					<!-- This Plugin creates a jar archive of the source files of the current 
