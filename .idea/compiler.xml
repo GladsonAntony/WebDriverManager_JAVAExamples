@@ -9,5 +9,8 @@
         <module name="WebdriverManagerTest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WebdriverManagerTest" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

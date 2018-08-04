@@ -5,16 +5,23 @@
 	<artifactId>WebdriverManagerTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<compiler.version>1.8</compiler.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<selenium.version>3.11.0</selenium.version>
+		<selenium.version>3.14.0</selenium.version>
 		<aspectj.version>1.8.10</aspectj.version>
 		<slf4j.version>1.7.24</slf4j.version>
 		<testng.version>6.14.3</testng.version>
-		<webdrivermanager.version>2.2.1</webdrivermanager.version>
+		<webdrivermanager.version>2.2.4</webdrivermanager.version>
 	</properties>
 
 	<!-- All the Dependencies Added Here -->
@@ -74,7 +81,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-ie-driver</artifactId>
-			<version>3.3.1</version>
+			<version>${selenium.version}</version>
 		</dependency>
 
 		<!-- HTML Unit Headerless Browser Dependency -->
@@ -86,9 +93,9 @@
 
 		<!-- Ghost/Phantom Webdriver Headerless Browser Dependency -->
 		<dependency>
-			<groupId>com.github.detro.ghostdriver</groupId>
-			<artifactId>phantomjsdriver</artifactId>
-			<version>1.1.0</version>
+			<groupId>com.github.detro</groupId>
+			<artifactId>ghostdriver</artifactId>
+			<version>2.1.0</version>
 		</dependency>
 
 		<!-- Selenium Support Dependency -->
@@ -170,6 +177,13 @@
 			<artifactId>maven-javadoc-plugin</artifactId>
 			<version>2.10.4</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>25.1-jre</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>
