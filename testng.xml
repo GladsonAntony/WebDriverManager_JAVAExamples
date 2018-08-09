@@ -3,7 +3,14 @@
 <suite name="WebDriver Manager Suite">
   <test name="Test All Browsers">
     <classes>
-      <class name="examples.WebDriverExamples"/>
+      <class name="examples.WDM_Chrome"/>
+      <class name="examples.WDM_ChromeHeadless"/>
+      <class name="examples.WDM_Firefox"/>
+      <class name="examples.WDM_FirefoxHeadless"/>
+      <class name="examples.WDM_InternetExplorer"/>
+      <class name="examples.WDM_MSEdge"/>
+      <class name="examples.WDM_Opera"/>
+      <class name="examples.WDM_Phantom"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
