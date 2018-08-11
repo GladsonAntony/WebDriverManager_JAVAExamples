@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.OperaDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
@@ -15,13 +16,15 @@ public class WDM_Opera
     @Test
     public void test_Opera() throws Exception
     {
-        OperaDriverManager.getInstance().arch64().setup();
+       OperaDriverManager.getInstance().arch64().setup();
+        System.out.println(WebDriverManager.operadriver().getBinaryPath());
         OperaOptions operaOptions = new OperaOptions();
         operaOptions.setBinary("C:\\Program Files\\Opera\\54.0.2952.64\\opera.exe");
         operaDriver = new OperaDriver(operaOptions);
         operaDriver.manage().window().maximize();
         operaDriver.get("https://www.google.co.in");
         Assert.assertEquals(operaDriver.getTitle(),"Google");
+        System.out.println(WebDriverManager.operadriver().getBinaryPath());
     }
 
     @AfterMethod
