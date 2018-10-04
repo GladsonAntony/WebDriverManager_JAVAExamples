@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.EdgeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class WDM_MSEdge
     @Test
     public void test_MSEdge() throws Exception
     {
-        EdgeDriverManager.getInstance().setup();
+        WebDriverManager.edgedriver().setup();
         edgeDriver = new EdgeDriver();
         edgeDriver.manage().window().maximize();
         edgeDriver.get("https://www.google.co.in");

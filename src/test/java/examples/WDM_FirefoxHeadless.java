@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -15,7 +16,7 @@ public class WDM_FirefoxHeadless
     @Test
     public void test_Firefox() throws Exception
     {
-        FirefoxDriverManager.getInstance().arch64().setup();
+        WebDriverManager.firefoxdriver().arch64().setup();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.addArguments("--headless");
         firefoxHeadlessDriver =new FirefoxDriver(firefoxOptions);

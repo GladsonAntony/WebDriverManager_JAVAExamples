@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.PhantomJsDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class WDM_Phantom
     @Test
     public void test_Phantom() throws Exception
     {
-        PhantomJsDriverManager.getInstance().setup();
+        WebDriverManager.phantomjs().setup();
         phantomDriver = new PhantomJSDriver();
         System.out.println("Phantom JS Driver Setup");
         phantomDriver.get("https://www.google.co.in/");

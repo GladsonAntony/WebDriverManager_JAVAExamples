@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class WDM_Firefox
     @Test
     public void test_Firefox() throws Exception
     {
-        FirefoxDriverManager.getInstance().arch64().setup();
+        WebDriverManager.firefoxdriver().arch64().setup();
         firefoxDriver=new FirefoxDriver();
         firefoxDriver.manage().window().maximize();
         firefoxDriver.get("https://www.google.co.in");

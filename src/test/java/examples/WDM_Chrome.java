@@ -1,6 +1,7 @@
 package examples;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -15,7 +16,7 @@ public class WDM_Chrome
     @Test
     public void test_Chrome() throws Exception
     {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
         chromeDriver = new ChromeDriver();
         chromeDriver.get("http://www.google.co.in");
         chromeDriver.manage().window().maximize();

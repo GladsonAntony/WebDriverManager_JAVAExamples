@@ -16,7 +16,7 @@ public class WDM_Opera
     @Test
     public void test_Opera() throws Exception
     {
-       OperaDriverManager.getInstance().arch64().setup();
+        WebDriverManager.operadriver().arch64().setup();
         System.out.println(WebDriverManager.operadriver().getBinaryPath());
         OperaOptions operaOptions = new OperaOptions();
         operaOptions.setBinary("C:\\Program Files\\Opera\\54.0.2952.64\\opera.exe");

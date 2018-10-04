@@ -24,8 +24,8 @@
 		<selenium.version>3.14.0</selenium.version>
 		<aspectj.version>1.9.1</aspectj.version>
 		<slf4j.version>1.8.0-beta2</slf4j.version>
-		<testng.version>6.14.3</testng.version>
-		<webdrivermanager.version>2.2.4</webdrivermanager.version>
+		<testng.version>7.0.0-beta1</testng.version>
+		<webdrivermanager.version>3.0.0</webdrivermanager.version>
 	</properties>
 
 	<!-- All the Dependencies Added Here -->

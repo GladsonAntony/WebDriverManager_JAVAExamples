@@ -19,6 +19,7 @@ test-output
 *.iws
 video
 .idea/*
+.idea
 
 # eclipse
 .project
