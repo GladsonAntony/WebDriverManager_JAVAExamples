@@ -28,3 +28,4 @@ video
 
 #gedit
 *.*~
+.allure/

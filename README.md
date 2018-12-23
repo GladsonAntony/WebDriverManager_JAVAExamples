@@ -8,9 +8,20 @@ This is the working example set for all the browsers supported by bonigarcia's w
 <dependency>
 	<groupId>io.github.bonigarcia</groupId>
 	<artifactId>webdrivermanager</artifactId>
-	<version>2.2.4</version>
+	<version>3.1.1</version>
 </dependency>
 ```
+---
+### Examples:
+> [Chrome]()  
+[Chrome-Headless]()  
+[Mozilla Firefox]()  
+[Internet Explorer]()  
+[Microsoft Edge]()  
+[Opera]()  
+[PhantomJS]()  
+---
+
 ---
 ### Original Author - [Boni García](https://github.com/bonigarcia)
 ---
