@@ -19,7 +19,7 @@ public class WDM_Opera
         WebDriverManager.operadriver().arch64().setup();
         System.out.println(WebDriverManager.operadriver().getBinaryPath());
         OperaOptions operaOptions = new OperaOptions();
-        operaOptions.setBinary("C:\\Program Files\\Opera\\57.0.3098.106\\opera.exe");
+        operaOptions.setBinary("C:\\Program Files\\Opera\\66.0.3515.103\\opera.exe");
         operaDriver = new OperaDriver(operaOptions);
         operaDriver.manage().window().maximize();
         operaDriver.get("https://www.google.co.in");

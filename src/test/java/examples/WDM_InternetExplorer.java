@@ -16,9 +16,9 @@ public class WDM_InternetExplorer
     public void test_InternetExplorer() throws Exception
     {
         WebDriverManager.iedriver().arch64().setup();
-        DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
-        ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-        ieDriver = new InternetExplorerDriver(ieCapabilities);
+//        DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
+//        ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        ieDriver = new InternetExplorerDriver();
         ieDriver.manage().window().maximize();
         ieDriver.get("https://www.google.co.in/");
     }

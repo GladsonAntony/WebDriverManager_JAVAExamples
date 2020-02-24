@@ -1,16 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="WebDriver Manager Suite">
-  <test name="Test All Browsers">
-    <classes>
-      <class name="examples.WDM_Chrome"/>
-      <class name="examples.WDM_ChromeHeadless"/>
-      <class name="examples.WDM_Firefox"/>
-      <class name="examples.WDM_FirefoxHeadless"/>
-      <class name="examples.WDM_InternetExplorer"/>
-      <class name="examples.WDM_MSEdge"/>
-      <class name="examples.WDM_Opera"/>
-      <class name="examples.WDM_Phantom"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/Training/WebDriverManager_JAVAExamples">
+        <classes>
+            <class name="examples.WDM_Chrome">
+                <methods>
+                    <include name="test_Chrome"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_ChromeHeadless">
+                <methods>
+                    <include name="test_ChromeHeadless"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_Firefox">
+                <methods>
+                    <include name="test_Firefox"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_FirefoxHeadless">
+                <methods>
+                    <include name="test_Firefox"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_InternetExplorer">
+                <methods>
+                    <include name="test_InternetExplorer"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_MSEdge">
+                <methods>
+                    <include name="test_MSEdge"/>
+                </methods>
+            </class>
+            <class name="examples.WDM_Opera">
+                <methods>
+                    <include name="test_Opera"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
