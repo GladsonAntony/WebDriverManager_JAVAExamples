@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="F:/Training/WebDriverManager_JAVAExamples">
+    <test verbose="2" preserve-order="true" name="D:/Training/WebDriverManager_JAVAExamples">
         <classes>
             <class name="examples.WDM_Chrome">
                 <methods>

@@ -1,6 +1,5 @@
 package examples;
 
-import io.github.bonigarcia.wdm.OperaDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -9,27 +8,24 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class WDM_Opera
-{
+public class WDM_Opera {
     public static WebDriver operaDriver;
 
     @Test
-    public void test_Opera() throws Exception
-    {
+    public void test_Opera() throws Exception {
         WebDriverManager.operadriver().arch64().setup();
         System.out.println(WebDriverManager.operadriver().getBinaryPath());
         OperaOptions operaOptions = new OperaOptions();
-        operaOptions.setBinary("C:\\Program Files\\Opera\\66.0.3515.103\\opera.exe");
+        operaOptions.setBinary("C:\\Program Files\\Opera\\70.0.3728.106\\opera.exe");
         operaDriver = new OperaDriver(operaOptions);
         operaDriver.manage().window().maximize();
         operaDriver.get("https://www.google.co.in");
-        Assert.assertEquals(operaDriver.getTitle(),"Google");
+        Assert.assertEquals(operaDriver.getTitle(), "Google");
         System.out.println(WebDriverManager.operadriver().getBinaryPath());
     }
 
     @AfterMethod
-    public void tearDown() throws Exception
-    {
+    public void tearDown() throws Exception {
         operaDriver.quit();
     }
 }

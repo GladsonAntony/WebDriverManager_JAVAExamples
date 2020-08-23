@@ -8,7 +8,7 @@ This is the working example set for all the browsers supported by bonigarcia's w
 <dependency>
 	<groupId>io.github.bonigarcia</groupId>
 	<artifactId>webdrivermanager</artifactId>
-	<version>3.8.1</version>
+	<version>4.1.0</version>
 </dependency>
 ```
 ---
