@@ -11,7 +11,7 @@ public class WDM_InternetExplorer {
 
     @Test
     public void test_InternetExplorer() throws Exception {
-        WebDriverManager.iedriver().arch64().setup();
+        WebDriverManager.iedriver().setup();
 //        DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
 //        ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
         ieDriver = new InternetExplorerDriver();

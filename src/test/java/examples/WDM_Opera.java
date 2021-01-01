@@ -14,14 +14,10 @@ public class WDM_Opera {
     @Test
     public void test_Opera() throws Exception {
         WebDriverManager.operadriver().arch64().setup();
-        System.out.println(WebDriverManager.operadriver().getBinaryPath());
-        OperaOptions operaOptions = new OperaOptions();
-        operaOptions.setBinary("C:\\Program Files\\Opera\\70.0.3728.106\\opera.exe");
-        operaDriver = new OperaDriver(operaOptions);
+        operaDriver = new OperaDriver();
         operaDriver.manage().window().maximize();
         operaDriver.get("https://www.google.co.in");
         Assert.assertEquals(operaDriver.getTitle(), "Google");
-        System.out.println(WebDriverManager.operadriver().getBinaryPath());
     }
 
     @AfterMethod

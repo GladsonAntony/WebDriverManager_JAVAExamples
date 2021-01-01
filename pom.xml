@@ -24,10 +24,10 @@
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
         <maven.javadoc.plugin.version>3.1.1</maven.javadoc.plugin.version>
         <testng.version>7.3.0</testng.version>
-        <selenium.version>4.0.0-alpha-6</selenium.version>
+        <selenium.version>4.0.0-alpha-7</selenium.version>
         <allure.version>2.13.5</allure.version>
         <aspectj.version>1.9.6</aspectj.version>
-        <webdrivermanager.version>4.1.0</webdrivermanager.version>
+        <webdrivermanager.version>4.2.2</webdrivermanager.version>
         <apachepoi.version>4.1.2</apachepoi.version>
         <slf4j.version>1.7.30</slf4j.version>
     </properties>
@@ -341,7 +341,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <release>12</release>                    <!-- or 12 -->
+                    <release>15</release>                    <!-- or 12 -->
                 </configuration>
             </plugin>
 
