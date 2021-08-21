@@ -8,7 +8,7 @@ This is the working example set for all the browsers supported by bonigarcia's w
 <dependency>
 	<groupId>io.github.bonigarcia</groupId>
 	<artifactId>webdrivermanager</artifactId>
-	<version>4.1.0</version>
+	<version>4.4.3</version>
 </dependency>
 ```
 ---
@@ -16,7 +16,6 @@ This is the working example set for all the browsers supported by bonigarcia's w
 > [Chrome]()  
 [Chrome-Headless]()  
 [Mozilla Firefox]()  
-[Internet Explorer]()  
 [Microsoft Edge - Chromium]()  
 [Opera]()  
 ---

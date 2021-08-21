@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class WDM_InternetExplorer {
     public static WebDriver ieDriver;
 
-    @Test
+    @Test(enabled = false)
     public void test_InternetExplorer() throws Exception {
         WebDriverManager.iedriver().setup();
 //        DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
